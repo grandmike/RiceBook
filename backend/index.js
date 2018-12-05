@@ -19,6 +19,9 @@ const uploadImage = require('./src/uploadCloudinary');
 //password: qR7JnhzkuCqTG8K
 app.use(session({secret: 'thisIsMySecretMessageHowWillYouGuessIt'}));
 
+/**
+ * enable cors
+ */
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', req.headers.origin);
     res.header('Access-Control-Allow-Credentials', true);
