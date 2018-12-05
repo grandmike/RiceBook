@@ -33,6 +33,9 @@ export class FollowingComponent implements OnInit {
 
   }
 
+  /**
+   * get following list of current user
+   */
   getFollowing() {
     const promise = this.followingService.getfollowing(this.curId)
     promise.then(data => {
@@ -56,7 +59,9 @@ export class FollowingComponent implements OnInit {
 
   }
 
-
+  /**
+   * add a new friend
+   */
   onAdd() {
     if (this.newfollowing == this.curId) {
       this.sendHintMessage('You can not follow yourself!', "red");
@@ -91,6 +96,11 @@ export class FollowingComponent implements OnInit {
 
   }
 
+  /**
+   * display hint message
+   * @param message
+   * @param color
+   */
   sendHintMessage(message, color) {
     this.hint.innerHTML = message;
     this.hint.style.color = color;
@@ -99,6 +109,10 @@ export class FollowingComponent implements OnInit {
     },1500);
   }
 
+  /**
+   * unfollow a friend
+   * @param profile user information
+   */
   onUnfollow(profile) {
     const p = this.followingService.deletefollowing(this.curId, profile.id);
     p.then(data => {

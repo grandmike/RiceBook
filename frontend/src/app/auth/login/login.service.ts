@@ -9,7 +9,11 @@ export class LoginService {
     constructor(private http: HttpClient, private httpSerivce: HttpService) { }
 
 
-
+  /**
+   * login authentication
+   * @param netid  user unique id
+   * @param password user password
+   */
     login(netid, password) {
         return this.httpSerivce.doLogin(netid, password).toPromise().then((data) => {
             //console.log(data);

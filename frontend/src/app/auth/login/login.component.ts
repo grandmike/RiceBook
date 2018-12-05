@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
   initLocalStorage() {
     localStorage.setItem('curId', '');
   }
-  
+  /**
+   * login in
+   */
   onLogin(form: NgForm) {
     if (form.invalid) {
       return;
@@ -45,7 +47,9 @@ export class LoginComponent implements OnInit {
     });
 
   }
-
+  /**
+   * login in with facebook account
+   */
   onFBLogin() {
     this.loginService.fb_login();
   }

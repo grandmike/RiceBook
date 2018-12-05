@@ -42,7 +42,9 @@ export class HeadlineComponent implements OnInit {
   }
 
 
-
+  /**
+   * update current status
+   */
   onStatusUpdate() {
     this.status = this.statusInput;
     this.headlineService.updateheadline(localStorage.getItem('curId'), this.status).then((data)=>{
@@ -55,6 +57,11 @@ export class HeadlineComponent implements OnInit {
     });
   }
 
+  /**
+   * display hint message
+   * @param message
+   * @param color
+   */
   sendHintMessage(message, color) {
     this.hint.innerHTML = message;
     this.hint.style.color = color;

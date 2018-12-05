@@ -28,6 +28,11 @@ export class RegistrationComponent implements OnInit {
     this.passwordmatch = true;
     return false;
   }
+
+  /**
+   * website only open to 18+ people
+   * @param birth
+   */
   invalidBirth(birth: NgModel) {
     const birth_date = new Date(birth.value);
     const adult = new Date(birth_date.getFullYear() + 18 + '-' +
@@ -43,6 +48,10 @@ export class RegistrationComponent implements OnInit {
     return false;
   }
 
+  /**
+   * registration
+   * @param form registration information
+   */
   onRegistration(form: NgForm) {
     if (form.invalid || !this.emailvalid || !this.passwordmatch) {
       return;

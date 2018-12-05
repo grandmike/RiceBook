@@ -10,6 +10,10 @@ export class RegistrationService {
 
   constructor(private http: HttpClient, private httpSerivce: HttpService) {}
 
+  /**
+   * registration
+   * @param profile user information
+   */
   registration(profile: Profile) {
     return this.httpSerivce.doRegistration(profile).toPromise()
       .then((data) => {

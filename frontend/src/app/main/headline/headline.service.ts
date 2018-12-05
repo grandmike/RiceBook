@@ -17,6 +17,10 @@ export class HeadlineService {
     }
   constructor(private http: HttpClient, private httpSerivce: HttpService) { }
 
+  /**
+   * get user information
+   * @param netid user netid
+   */
     getProfile(netid) {
       return this.httpSerivce.doGetProfile(netid).toPromise().then((data) => {
         //console.log(data);
@@ -27,6 +31,11 @@ export class HeadlineService {
         });
     }
 
+  /**
+   * update user status
+   * @param netid current user id
+   * @param status user status
+   */
     updateheadline(netid, status) {
       return this.httpSerivce.doUpdateHeadline(netid, status).toPromise().then((data) => {
         //console.log(data);

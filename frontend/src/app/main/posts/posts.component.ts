@@ -52,7 +52,9 @@ export class PostsComponent implements OnInit {
 
   }
 
-
+  /**
+   * sort all posts according timestamp
+   */
   sortCurPosts() {
     //console.log("to sort");
     //console.log('the length' + this.postsCopy.length);
@@ -72,6 +74,10 @@ export class PostsComponent implements OnInit {
     }
   }
 
+  /**
+   * add a new post
+   * @param form
+   */
   onAddPost(form: NgForm) {
     if (!form.valid || this.article == null || this.article === '') {
       return;
@@ -110,6 +116,11 @@ export class PostsComponent implements OnInit {
     this.article = '';
   }
 
+  /**
+   * display hint message
+   * @param message
+   * @param color
+   */
   sendHintMessage(message, color) {
     this.hint.innerHTML = message;
     this.hint.style.color = color;
@@ -118,6 +129,11 @@ export class PostsComponent implements OnInit {
     },1500);
   }
 
+  /**
+   * display hint message
+   * @param message
+   * @param color
+   */
   sendHintMessageInPost(message, color) {
     this.posthint.innerHTML = message;
     this.posthint.style.color = color;
@@ -127,10 +143,18 @@ export class PostsComponent implements OnInit {
     },1500);
   }
 
+  /**
+   * search post
+   * @param keyword
+   */
   onSearch(keyword) {
     this.posts = this.postsService.doSearch(keyword, this.postsCopy);
   }
 
+  /**
+   * pick a image
+   * @param event
+   */
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
     const image = file;

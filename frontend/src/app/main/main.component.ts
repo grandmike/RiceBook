@@ -18,6 +18,10 @@ export class MainComponent implements OnInit {
         localStorage.setItem('curId', data.id);
       });
   }
+
+  /**
+   * user logout
+   */
   onLogOut() {
     const p = this.headlineService.Logout()
       .then((data) => {

@@ -10,7 +10,12 @@ export class FollowingService {
 
   constructor(private http: HttpClient, private postsService: PostsService, private httpService: HttpService) { }
 
-    updatePost(curId, curFollowingId) {
+  /**
+   * update user feed according to follower
+   * @param curId user netid
+   * @param curFollowingId user following list
+   */
+  updatePost(curId, curFollowingId) {
       const posts = [];
       let ids = [];
       ids.push({id:curId});
@@ -33,7 +38,11 @@ export class FollowingService {
       }
     }
 
-    getfollowing(netid) {
+  /**
+   * get following list of current user
+   * @param netid current user netid
+   */
+  getfollowing(netid) {
       return this.httpService.doGetFollowing(netid).toPromise().then((data) => {
         //console.log(data);
         return Promise.resolve(data);
@@ -43,6 +52,11 @@ export class FollowingService {
         });
     }
 
+  /**
+   * add a new friend
+   * @param netid current user id
+   * @param newfollowing new friend id
+   */
     addfollowing(netid, newfollowing) {
       return this.httpService.doUpdateFollowing(netid, newfollowing).toPromise().then((data)=>{
         //console.log(data);
@@ -53,6 +67,11 @@ export class FollowingService {
         });
     }
 
+  /**
+   * delete a friend
+   * @param netid current user id
+   * @param defollowing friend id
+   */
     deletefollowing(netid, defollowing) {
       return this.httpService.doDeleteFollowing(netid, defollowing).toPromise().then((data)=>{
         //console.log(data);
@@ -63,6 +82,10 @@ export class FollowingService {
         });
     }
 
+  /**
+   * get user information
+   * @param netid current user id
+   */
   getProfile(netid) {
     return this.httpService.doGetProfile(netid).toPromise().then((data) => {
       //console.log(data);
