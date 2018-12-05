@@ -1,0 +1,24 @@
+<mat-toolbar color ="primary">RiceBook
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <a mat-button routerLink="/profile" routerLinkActive="mat-accent">Profile</a>
+    </li>
+    <li>
+      <a mat-button (click)="onLogOut()" routerLinkActive="mat-accent">Logout</a>
+    </li>
+  </ul>
+</mat-toolbar>
+<body>
+<div class="left">
+  <div class="left_up">
+    <app-main-headline></app-main-headline>
+  </div>
+  <div class="left_down">
+    <app-main-following></app-main-following>
+  </div>
+</div>
+<div class="right">
+  <app-main-posts></app-main-posts>
+</div>
+</body>

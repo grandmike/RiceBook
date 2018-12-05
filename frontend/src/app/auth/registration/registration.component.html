@@ -1,0 +1,68 @@
+<mat-card>
+  <p class="sub_title">Register</p>
+  <form (submit)="onRegistration(registrationForm)" #registrationForm="ngForm">
+
+    <mat-form-field>
+      <input matInput id="register_id" name="_netid" placeholder="Netid"
+             ngModel #netid="ngModel" required pattern="^[a-zA-Z][a-zA-Z0-9]*">
+      <mat-error *ngIf="netid.invalid">Netid can only be upper or lower case letters and numbers
+        , but may not start with a number.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="_username" placeholder="Username" ngModel #username="ngModel">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="_email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+             ngModel #email="ngModel" required>
+      <mat-error *ngIf="email.invalid">Not a valid email address.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="_phone" placeholder="Phone" pattern="\d\d\d-\d\d\d-\d\d\d\d"
+             ngModel #phone="ngModel" required>
+      <mat-hint>123-123-1234</mat-hint>
+      <mat-error *ngIf="phone.invalid">Not a valid phone.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="_zipcode" placeholder="Zipcode" pattern="\d\d\d\d\d"
+             ngModel #zipcode="ngModel" required>
+      <mat-error *ngIf="zipcode.invalid">Not a valid zip code.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="date" name="_birth" placeholder="Birth"
+             ngModel #birth="ngModel" required>
+    </mat-form-field>
+    <mat-error *ngIf="invalidBirth(birth)">Website only opens to 18 years or older individuals.</mat-error>
+
+    <mat-form-field>
+      <input matInput id="register_password" type="password" name="_password" placeholder="Password"
+             ngModel #password="ngModel" required minlength="4">
+      <mat-error *ngIf="password.invalid">Not a password, the length should not less than 4.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" name="_password_confirm" placeholder="Password Confirmation"
+             ngModel #password_confirm="ngModel" required>
+    </mat-form-field>
+    <mat-error *ngIf="unmatchPassword(password, password_confirm)
+    && (password_confirm.touched || password_confirm.dirty)">Passwords don't match.</mat-error>
+
+
+    <br>
+    <button id="regbtn" style="margin-top: 10px" mat-raised-button name="_submit"
+            color="accent"
+            type="submit" >Register</button>
+  </form>
+
+  <br>
+  <div id="registration_hint">
+
+  </div>
+
+</mat-card>
+
+

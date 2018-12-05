@@ -1,0 +1,31 @@
+.post_img {
+  width: 95%;
+  height: 550px;
+}
+input[type="file"] {
+  visibility: hidden;
+}
+.post_text {
+  font-family: "Times New Roman";
+  text-align: left;
+}
+mat-card-title {
+  font-size: 12px;
+}
+mat-card-subtitle {
+  font-size: 10px;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.image-preview {
+  height: 6rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}
+

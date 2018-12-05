@@ -1,0 +1,130 @@
+<body>
+<mat-card style="text-align: left">
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field style="width: 60%">
+      <textarea id="article_text" matInput rows="3" name="post_content"  [(ngModel)] ="article"
+                placeholder="Your post here"></textarea>
+    </mat-form-field>
+    <button mat-stroked-button type="button" (click)="filePicker.click()" style="margin-left: 20px">Pick Image</button>
+    <input type="file" name="post_img" #filePicker (change)="onImagePicked($event)" >
+    <br>
+    <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview !== null">
+      <img [src]="imagePreview">
+    </div>
+    <button style="margin-top: 20px"
+            mat-raised-button
+            color="primary"
+            type="reset"
+            (click)="onCancel()">Cancel</button>
+    <button id="addbtn" style="float: right; margin-top: 20px"
+            mat-raised-button
+              color="primary"
+              type="submit" >Post</button>
+  </form>
+
+  <div id="article_hint">
+
+  </div>
+</mat-card>
+
+<div class="searchDiv"style="margin-top: 20px; text-align: left">
+  <mat-form-field>
+    <input name="search_keyword" matInput ngModel #search="ngModel" placeholder="Key Words">
+  </mat-form-field>
+  <button name="search_btn" mat-button color="primary" (click)="onSearch(search.value)"><mat-icon>search</mat-icon>Search</button>
+</div>
+<div style="margin-top: 40px">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <mat-card name="all_posts" style="margin-top: 10px" *ngFor="let post of posts">
+    <mat-card-title name="author_info" style="text-align: left">Created by: {{post.id}}</mat-card-title>
+    <mat-card-subtitle style="text-align: left">Date: {{post.time}}</mat-card-subtitle>
+    <img *ngIf="post.img != null && post.img != '' " class="post_img" src={{post.img}}>
+    <p name="article_text" class="post_text">{{post.article}}</p>
+    <mat-expansion-panel color="primary">
+      <mat-expansion-panel-header >Comments</mat-expansion-panel-header>
+      <div *ngFor="let c of post.comments">
+
+        <p style="text-align: left; width: 70%">{{c.username}} : {{ c.comment }}</p>
+        <button (click)="onModifyClick(c._id, post)"
+                *ngIf="c.username == id && _CommentModifyId == -1"
+                style="float: right" mat-raised-button color="primary">modify</button>
+
+        <div *ngIf="_CommentModifyId == c._id">
+          <form (submit)="onModifyComment(modifyCommentForm)" #modifyCommentForm="ngForm">
+            <br>
+            <input type="text" name="modified_comment" style="float: left; width: 60% "
+                   [(ngModel)] ="modifyCommentText" required placeholder="Modify your comment here ..." >
+            <button
+                    style="margin-top: 20px; width: 5%; font-size: 10px"
+                    mat-raised-button
+                    color="primary"
+                    type="reset"
+                    (click)="onModifyCommentCancel()">Cancel</button>
+            <button
+                    style="margin-top: 20px; width: 5%; font-size: 10px; margin-left: 10px"
+                    mat-raised-button
+                    color="primary"
+                    type="submit" >Update</button>
+          </form>
+        </div>
+
+        <hr>
+        <br>
+      </div>
+
+    </mat-expansion-panel>
+
+    <br>
+    <div *ngIf="_CommentPostId == post._id">
+      <form (submit)="onAddComment(addCommentForm)" #addCommentForm="ngForm">
+        <mat-form-field style="width: 73%; float: left">
+        <textarea matInput rows="2"  name="comment" [(ngModel)] ="addCommentText"
+                placeholder="Leave your comment here ..." required></textarea>
+        </mat-form-field>
+        <button
+                style="margin-top: 20px; width: 5%; font-size: 10px"
+                mat-raised-button
+                color="primary"
+                type="reset"
+                (click)="onAddCommentCancel()">Cancel</button>
+        <button
+                style="margin-top: 20px; width: 5%; font-size: 10px; margin-left: 10px"
+                mat-raised-button
+                color="primary"
+                type="submit" >Comment</button>
+      </form>
+    </div>
+    <br>
+    <br>
+    <button *ngIf="post.id == id" mat-raised-button color="primary" (click)="onEditPostClick(post)">Edit</button>
+    <button mat-raised-button color="primary" (click)="onAddCommentClick(post)" style="margin-left: 20px">Comment</button>
+
+    <div *ngIf="_EditPostId == post._id">
+      <br>
+      <form (submit)="onUpdatePost(updatePostForm)" #updatePostForm="ngForm">
+        <mat-form-field style="width: 80%">
+      <textarea id="update_article_text" matInput rows="3" name="post_content"  [(ngModel)] ="updateArticleText"
+                placeholder="Update your post here ..." required></textarea>
+        </mat-form-field>
+        <br>
+        <button style="margin-top: 20px; float: left"
+                mat-raised-button
+                color="primary"
+                type="reset"
+                (click)="onUpdatePostCancel()">Cancel Edit</button>
+        <button style="float: right; margin-top: 20px"
+                mat-raised-button
+                color="primary"
+                type="submit">Update Post</button>
+        <br>
+        <br>
+        <br>
+
+      </form>
+
+    </div>
+    <br>
+    <div></div>
+  </mat-card>
+</div>
+</body>

@@ -1,0 +1,117 @@
+<mat-toolbar color ="primary">Profile
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <a mat-button (click)="onMainPage()">Main Page</a>
+    </li>
+  </ul>
+</mat-toolbar>
+<body>
+  <div class="left">
+    <img class="self_img" *ngIf="imagePreview != null" [src]="imagePreview" >
+      <input style="display: none" type="file" name="post_img" #filePicker (change)="onImagePicked($event)" >
+      <br>
+    <button class="btn-upload-pic" mat-raised-button (click)="filePicker.click()" color="primary">new avatar</button>
+      <button class="btn-upload-pic" mat-raised-button
+              style="margin-left: 20px" (click)="onUploadAvatar()" color="primary">upload</button>
+
+      <div id="upload_hint">
+
+      </div>
+
+    <mat-card>
+      <div style="text-align: left">
+        <p style="font-weight: bold; font-size: 20px">Current Info</p>
+      </div>
+      <div style="margin-top: 10px; text-align: left; margin-left: 15px">
+        <p>UserId: {{current_id}}</p>
+        <p>Email: {{current_email}}</p>
+        <p>Dob: {{current_birth}}</p>
+        <p>Phone: {{current_phone}}</p>
+        <p>Zipcode: {{current_zipcode}}</p>
+      </div>
+    </mat-card>
+  </div>
+  <div class="right">
+    <mat-card>
+      <div style="text-align: left">
+        <p style="font-weight: bold; font-size: 20px">Update Info</p>
+      </div>
+
+      <form (submit)="onUpdateForm(updateForm)" #updateForm="ngForm">
+
+        <mat-form-field>
+          <input matInput name="_email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                 ngModel #email="ngModel" required>
+          <mat-error *ngIf="email.invalid">Not a valid email address.</mat-error>
+        </mat-form-field>
+
+        <!--
+       <mat-form-field>
+         <input matInput name="_phone" placeholder="Phone" pattern="\d\d\d-\d\d\d-\d\d\d\d"
+                ngModel #phone="ngModel" required>
+         <mat-hint>123-123-1234</mat-hint>
+         <mat-error *ngIf="phone.invalid">Not a valid phone.</mat-error>
+       </mat-form-field>
+       -->
+
+       <mat-form-field>
+         <input matInput name="_zipcode" placeholder="Zipcode" pattern="\d\d\d\d\d"
+                ngModel #zipcode="ngModel" required>
+         <mat-error *ngIf="zipcode.invalid">Not a valid zip code.</mat-error>
+       </mat-form-field>
+
+
+       <mat-form-field>
+         <input matInput type="password" name="_password" placeholder="Password"
+                ngModel #password="ngModel" required minlength="4">
+         <mat-error *ngIf="password.invalid">Not a password, the length should not less than 4.</mat-error>
+       </mat-form-field>
+
+       <mat-form-field>
+         <input matInput type="password" name="_password_confirm" placeholder="Password Confirmation"
+                ngModel #password_confirm="ngModel" required>
+       </mat-form-field>
+       <mat-error *ngIf="unmatchPassword(password, password_confirm)
+   && (password_confirm.touched || password_confirm.dirty)">Passwords don't match.</mat-error>
+
+       <br>
+       <button mat-raised-button name="_update_info"
+               color="primary"
+               type="submit" >Update</button>
+        <br>
+        <div id="update_hint">
+
+        </div>
+
+     </form>
+
+   </mat-card>
+
+
+      <mat-card *ngIf="isShowLink">
+          <button mat-raised-button name="_update_info"
+                  (click)="unLink()" color="primary">{{link_btn_text}}</button>
+
+          <form *ngIf="isLink" (submit)="onLinkForm(linkForm)" #linkForm="ngForm">
+
+              <mat-form-field>
+                  <input matInput name="_id" placeholder="id: qs8" required ngModel #id="ngModel">
+                  <mat-error *ngIf="id.invalid">Please input the netID</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <input matInput type="password" name="_password" placeholder="Password: 1234"
+                         required ngModel #password="ngModel" minlength="4">
+                  <mat-error *ngIf="password.invalid">Please input a valid password, mininum length is 4.</mat-error>
+              </mat-form-field>
+              <br>
+              <button style="margin-top: 10px" mat-raised-button
+                      color="accent"
+                      type="submit">Link</button>
+
+          </form>
+
+      </mat-card>
+ </div>
+</body>

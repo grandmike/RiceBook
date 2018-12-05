@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="8" time="22.406">
+ <testsuite name="hw6 front-end e2e testing" timestamp="2018-11-11T16:39:15" hostname="localhost" time="22.406" errors="0" tests="8" skipped="0" disabled="0" failures="0">
+  <testcase classname="hw6 front-end e2e testing" name="should register a user" time="3.902" />
+  <testcase classname="hw6 front-end e2e testing" name="should login as new user" time="2.52" />
+  <testcase classname="hw6 front-end e2e testing" name="create a new article and validate" time="3.632" />
+  <testcase classname="hw6 front-end e2e testing" name="update headline and verify change" time="3.652" />
+  <testcase classname="hw6 front-end e2e testing" name="log out as new user" time="2.003" />
+  <testcase classname="hw6 front-end e2e testing" name="should login as test user" time="2.021" />
+  <testcase classname="hw6 front-end e2e testing" name="search for a keyword that matches only one of test articles and verify" time="2.182" />
+  <testcase classname="hw6 front-end e2e testing" name="log out as test user" time="2.491" />
+ </testsuite>
+</testsuites>

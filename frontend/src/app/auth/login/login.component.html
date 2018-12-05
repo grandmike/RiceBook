@@ -1,0 +1,30 @@
+<mat-card>
+  <p class="sub_title">Login</p>
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+
+    <mat-form-field>
+      <input id="login_id" matInput name="_id" placeholder="id: qs8" required ngModel #id="ngModel">
+      <mat-error *ngIf="id.invalid">Please input the netID</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input id="login_password" matInput type="password" name="_password" placeholder="Password: 1234"
+             required ngModel #password="ngModel" minlength="4">
+      <mat-error *ngIf="password.invalid">Please input a valid password, mininum length is 4.</mat-error>
+    </mat-form-field>
+    <br>
+    <button id="loginbtn" style="margin-top: 10px" mat-raised-button
+            color="accent"
+            type="submit">Login</button>
+  </form>
+  <button class="fb_btn" (click)="onFBLogin()">
+  Login in with FB</button>
+
+  <br>
+  <div id="login_hint">
+
+  </div>
+
+</mat-card>
+
+

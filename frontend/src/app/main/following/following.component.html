@@ -1,0 +1,24 @@
+<body>
+<mat-card >
+  <div style="width: 90%; margin-left: 13px">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <mat-card style="margin-top: 10px" *ngFor="let following of curFollowing">
+      <img class="follower_img" src={{following.img}}>
+      <p class="follower_id">{{following.id}}</p>
+      <p class="follower_status">{{following.status}}</p>
+      <button mat-raised-button color="primary" (click)="onUnfollow(following)">unfollow</button>
+    </mat-card>
+  </div>
+  <div style="margin-top: 40px">
+    <mat-form-field>
+      <input matInput name="add" placeholder="add new follower" [(ngModel)]="newfollowing">
+    </mat-form-field>
+    <button (click)="onAdd()"  style="margin-left: 10px" mat-raised-button color="primary">Add</button>
+  </div>
+
+  <div id="hint">
+
+  </div>
+</mat-card>
+
+</body>

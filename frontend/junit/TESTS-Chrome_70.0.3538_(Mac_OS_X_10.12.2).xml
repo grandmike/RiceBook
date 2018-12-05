@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 70.0.3538 (Mac OS X 10.12.2)" package="" timestamp="2018-10-20T08:10:58" id="0" hostname="qichaos-air.dyndns.rice.edu" tests="11" errors="0" failures="0" time="0.355">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36"/>
+  </properties>
+  <testcase name="LoginService should log in a previously registered user (not new users)" time="0.095" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).LoginService"/>
+  <testcase name="LoginService should not login an invalid user" time="0.023" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).LoginService"/>
+  <testcase name="LoginService should update success message (for displaying login success message to user)" time="0.022" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).LoginService"/>
+  <testcase name="LoginService should update error message (for displaying login error mesage to user)" time="0.016" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).LoginService"/>
+  <testcase name="FollowingService should add articles when adding a follower" time="0.035" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).FollowingService"/>
+  <testcase name="FollowingService should remove articles when removing a follower" time="0.025" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).FollowingService"/>
+  <testcase name="HeadLineService should log out a user (login state should be cleared)" time="0.029" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).HeadLineService"/>
+  <testcase name="PostsService should fetch articles for current logged in user" time="0.032" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).PostsService"/>
+  <testcase name="PostsService should update the search keyword" time="0.021" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).PostsService"/>
+  <testcase name="PostsService should filter displayed articles by the search keyword" time="0.021" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).PostsService"/>
+  <testcase name="ProfileService should log out a user (login state should be cleared)" time="0.036" classname="Chrome_70_0_3538_(Mac_OS_X_10_12_2).ProfileService"/>
+  <system-out>
+    <![CDATA[Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 3
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'valid user'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'test1'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 3
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 3
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'valid user'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 3
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'unfollow[object Object]'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'delete follower', 'qs8'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'after following id'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: []
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'this id qs9'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'new is gm3'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'cur name is gm2'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: [Object{id: 'qs8', username: 'gm1', password: '1234', display_name: 'Qichao Sun', email: 'sunqch3@gmail.com', phone: '832-306-0072', zipcode: '77030', birth: '1996-04-01', img: 'assets/1.png', status: 'I'm great'}, Object{id: 'qs9', username: 'gm2', password: '1234', display_name: 'kecode Swen', email: 'gm2@gmail.com', phone: '832-306-0072', zipcode: '77030', birth: '1996-04-01', img: 'assets/2.png', status: 'I'm great, too'}, Object{id: 'qs10', username: 'gm3', password: '1234', display_name: 'Frank Swen', email: 'frank@gmail.com', phone: '832-306-0072', zipcode: '77030', birth: '1996-04-01', img: 'assets/3.png', status: 'I'm great as well'}]
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'the new add follower[object Object]'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'this id qs9'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'updated posts'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: [Object{id: 'qs9', author: 'gm2', title: 'eiusmod tempor incididunt ut labore et', time: '10/16/2018, 8:46:26 PM', img: 'http://7.pic.paopaoche.net/thumb/up/2018-5/15276420466849089_600_0.jpg', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs9', author: 'gm2', title: 'eiusmod tempor incididunt ut labore et', time: '10/13/2018, 8:46:26 PM', img: 'http://i1.17173cdn.com/2fhnvk/YWxqaGBf/cms3/PQmfXKbkFBbDBwA.jpg', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs9', author: 'gm2', title: 'eiusmod tempor incididunt ut labore et', time: '10/10/2018, 8:46:26 PM', img: 'https://www.onrpg.com/wp-content/gallery/dark-souls-3/Dark-Souls-3-Box-Art.png', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}]
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'error->TypeError: this.callback is not a function'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'updated posts'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: [Object{id: 'qs9', author: 'gm2', title: 'eiusmod tempor incididunt ut labore et', time: '10/16/2018, 8:46:26 PM', img: 'http://7.pic.paopaoche.net/thumb/up/2018-5/15276420466849089_600_0.jpg', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs9', author: 'gm2', title: 'eiusmod tempor incididunt ut labore et', time: '10/13/2018, 8:46:26 PM', img: 'http://i1.17173cdn.com/2fhnvk/YWxqaGBf/cms3/PQmfXKbkFBbDBwA.jpg', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs9', author: 'gm2', title: 'eiusmod tempor incididunt ut labore et', time: '10/10/2018, 8:46:26 PM', img: 'https://www.onrpg.com/wp-content/gallery/dark-souls-3/Dark-Souls-3-Box-Art.png', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs8', author: 'gm1', title: 'eiusmod tempor incididunt ut labore et', time: '10/17/2018, 8:46:26 PM', img: 'https://oir.rice.edu/sites/g/files/bxs1496/f/styles/image_16_9__1920x1080_/public/heroslides/lovett-backdrop-crop.jpg?itok=bXLrGPQf', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs8', author: 'gm1', title: 'eiusmod tempor incididunt ut labore et', time: '10/14/2018, 8:46:26 PM', img: 'http://up.enterdesk.com/edpic_source/8f/36/c6/8f36c64c8f3e4c3b9403d637b612b8fb.jpg', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs8', author: 'gm1', title: 'eiusmod tempor incididunt ut labore et', time: '10/11/2018, 8:46:26 PM', img: 'https://img2.badfon.ru/wallpaper/big/3/c8/art-alcd-pixiv-fantasia-5821.jpg', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs10', author: 'gm3', title: 'eiusmod tempor incididunt ut labore et', time: '10/15/2018, 8:46:26 PM', img: 'http://img3.imgtn.bdimg.com/it/u=1748163033,308593818&fm=26&gp=0.jpg', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}, Object{id: 'qs10', author: 'gm3', title: 'eiusmod tempor incididunt ut labore et', time: '10/12/2018, 8:46:26 PM', img: 'https://static.zerochan.net/Dark.Souls.full.2068236.jpg', article: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex', comments: [..., ...]}]
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'error->TypeError: this.callback is not a function'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 3
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'gm1'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 1
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'gm1'
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 1
+,Chrome 70.0.3538 (Mac OS X 10.12.2) LOG: 'gm2'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

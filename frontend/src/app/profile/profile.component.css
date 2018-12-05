@@ -1,0 +1,53 @@
+body {
+  width: 95%;
+  margin: 1rem auto;
+  margin-top: 3rem;
+}
+.left{
+  width: 350px;
+  float: left;
+  display: table;
+  text-align: center;
+}
+
+.btn-upload-pic {
+  margin-top: 10px;
+  width: 140px;
+}
+.right{
+  margin-left: 400px;
+  text-align: center;
+}
+.self_img {
+  margin-top: 30px;
+  width: 300px;
+  height: 300px;
+  box-shadow:0px 0px  3px 3px #aaa;
+}
+
+mat-card{
+  margin: 2rem auto;
+}
+.info {
+  text-align: left;
+  margin-left: 1rem;
+}
+mat-form-field {
+  width: 85%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.spacer {
+  flex: 1 1 auto
+}

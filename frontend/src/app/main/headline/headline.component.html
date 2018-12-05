@@ -1,0 +1,16 @@
+<body>
+<mat-card>
+  <img class="self_img" src={{img}}>
+  <h4>{{id}}</h4>
+  <div class="info">
+    <p name="NowStatus">{{status}}</p>
+  </div>
+  <mat-form-field>
+    <input matInput name="NewStatus" placeholder="New Status" [(ngModel)]="statusInput">
+  </mat-form-field>
+  <button id="headlinebtn" (click)="onStatusUpdate()" class="btn-update" mat-raised-button color="primary">Update</button>
+  <br>
+  <div id="headline_hint">
+  </div>
+</mat-card>
+</body>
